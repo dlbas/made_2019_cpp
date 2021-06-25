@@ -24,6 +24,6 @@ try:
 except subprocess.CalledProcessError as e:
     assert e.returncode == error_code
 
-subprocess.check_call([executable, "   2+1"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
+assert subprocess.check_call([executable, "   2+1"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL) == 0
 
 print("tests ok")
